@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 
 class Contador extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             contador: 0
         };
     }
 
-    aumentaConatador = () => {
+    aumentaContador = () => {
         this.setState({contador: this.state.contador + 1});
     }
 
@@ -16,7 +16,7 @@ class Contador extends Component {
         return (
             <div>
                 <span>{"contador: " + this.state.contador}<br/></span>
-                <button onClick={this.aumentaConatador}>Haz clic para aumentar</button>
+                <button onClick={this.aumentaContador}>Haz clic para aumentar</button>
             </div>);
     }
 }
