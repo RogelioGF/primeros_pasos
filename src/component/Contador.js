@@ -1,24 +1,20 @@
-import React, {Component} from 'react';
+// importamos useState, el hook para crear un state en nuestro componente
+import React, {useState} from "react";
 
-class Contador extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            contador: 0
-        };
-    }
+function Contador() {
+    // useState recibe un parámetro: el valor inicial del estado (que será 0)
+    // y devuelve un array de dos posiciones:
+    //  la primera (count), tiene el valor del estado
+    //  la segunda (setCount), el método para actualizar el estado
+    const [count, setCount] = useState(0);
 
-    aumentaContador = () => {
-        this.setState({contador: this.state.contador + 1});
-    }
-
-    render() {
-        return (
-            <div>
-                <span>{"contador: " + this.state.contador}<br/></span>
-                <button onClick={this.aumentaContador}>Haz clic para aumentar</button>
-            </div>);
-    }
+    return (
+        <div>
+            <p>hiciste click {count} veces</p>
+            {/* actualizamos el state al hacer click con setCount */}
+            <button onClick={() => setCount(count + 1)}>Haz click y gozalooo</button>
+        </div>
+    );
 }
 
 export default Contador;
