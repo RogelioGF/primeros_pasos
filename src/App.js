@@ -1,21 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
-import Hola from "./component/Hola";
 import {Component} from "react";
 import Contador from "./component/Contador";
+import Hola from "./component/Hola";
+import Title from "./component/Titulo";
 
 class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            newTask: "",
+            //tasks: [],
+        }
+    }
+
+    handleTaskChange = (event) => {
+        this.setState({
+            newTask: event.target.value,
+        })
+    }
+
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to React</h2>
-                </div>
-                <div className="App-intro">
-                    <Hola nombre={prompt("Dime tu nombre")}/>
+            <div className="container">
+                <Title/>
+                    <Hola nombre="Escribe algo"/>
+                    <div className="input">
+                        <input onChange={this.handleTaskChange} type="text"/>
+                    </div>
+                    <h2>{this.state.newTask}</h2>
                     <Contador/>
-                </div>
             </div>
         );
     }
