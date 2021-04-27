@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
+//import React, {Component} from 'react';
+import React from 'react';
 
-class Hola extends Component {
-    render() {
-        return (<h1>{this.props.nombre}</h1>);
-    }
+function Hola(props) {
+    return (<h1>{props.nombre}</h1>);
 }
 
 export default Hola;
