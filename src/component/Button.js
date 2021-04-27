@@ -3,7 +3,7 @@ import {Button} from "@material-ui/core";
 
 function Boton() {
     return (
-        <Button variant="contained" color="primary" onClick={("https://github.com/")}>
+        <Button variant="contained" color="primary" href="https://github.com/">
             Formulario
         </Button>
     )
